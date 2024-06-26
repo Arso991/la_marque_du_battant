@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url('/src//assets/fonts/Montserrat-Regular.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url('/src/assets/fonts/Montserrat-Bold.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url('/src/assets/fonts/Montserrat-Italic.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url('/src/assets/fonts/Montserrat-Light.ttf') format(truetype);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat-Regular";
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,18 +43,111 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style général pour la scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Couleur du fond de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Couleur du curseur de la scrollbar */
+
+  border: 1px solid #f1f1f1;
+  /* Espace entre le curseur et le track */
+}
+
+/* Pour Firefox */
+body {
+  scrollbar-width: thin;
+  /* Largeur de la scrollbar */
+  scrollbar-color: #888 #f1f1f1;
+  /* Couleur du curseur et du track */
+}
+
+/* scroll bar pour le modal d'authentification */
+.custom-scrollbar {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 1px solid #fff;
+}
+
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #fff;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 3.2rem;
+  height: 1.8rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: black;
+  border-color: black;
+}
+
+.custom-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  /* 1/4 rem or 4px */
+  left: 0.5rem;
+  /* 1/4 rem or 4px */
+  width: 0.5rem;
+  /* 3/4 rem or 12px */
+  height: 0.75rem;
+  /* 3/4 rem or 12px */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.slick-slide>div {
+  margin: 0 10px;
+}
+
+.slick-slide>div:nth-child(1) {
+  margin-left: 0;
+}
+
+.slick-list {
+  margin-right: -10px;
 }
