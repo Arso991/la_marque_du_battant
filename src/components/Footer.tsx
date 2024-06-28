@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
       {/* BOTTOM */}
       <div className="mt-20 pt-5 text-right">
-        <p>© 2024 Copyright Marque du battant®</p>
+        <p>© 2024 Copyright La marque du battant®</p>
       </div>
     </div>
   );

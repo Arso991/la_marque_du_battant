@@ -24,7 +24,7 @@ export default function Footer() {
               open ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="custom-scrollbar">
+            <div className="custom-scrollbar h-full">
               <div className="pt-6 fixed top-0 right-0 left-0 bg-white">
                 <button
                   className="py-4 border-b-4 border-black w-1/2"
